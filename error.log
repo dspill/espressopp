@@ -1,0 +1,435 @@
+-- The C compiler identification is Intel 18.0.3.20180410
+-- The CXX compiler identification is Intel 18.0.3.20180410
+-- Check for working C compiler: /mpcdf/soft/SLE_12_SP3/packages/haswell/intel/18.0.3/bin/icc
+-- Check for working C compiler: /mpcdf/soft/SLE_12_SP3/packages/haswell/intel/18.0.3/bin/icc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /mpcdf/soft/SLE_12_SP3/packages/haswell/intel/18.0.3/bin/icpc
+-- Check for working CXX compiler: /mpcdf/soft/SLE_12_SP3/packages/haswell/intel/18.0.3/bin/icpc -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found MPI_C: /u/system/soft/SLE_12_SP3/packages/x86_64/intel_parallel_studio/2018.3/compilers_and_libraries_2018.3.222/linux/mpi/intel64/lib/release_mt/libmpi.so (found version "3.1") 
+-- Found MPI_CXX: /u/system/soft/SLE_12_SP3/packages/x86_64/intel_parallel_studio/2018.3/compilers_and_libraries_2018.3.222/linux/mpi/intel64/lib/libmpicxx.so (found version "3.1") 
+-- Found MPI: TRUE (found version "3.1")  
+-- Found PythonInterp: /mpcdf/soft/SLE_12_SP3/packages/x86_64/anaconda/2.5.1.0/bin/python2 (found suitable version "2.7.14", minimum required is "2") 
+-- PYTHON_INCLUDE_PATH = /mpcdf/soft/SLE_12_SP3/packages/x86_64/anaconda/2.5.1.0/include/python2.7
+-- PYTHON_VERSION = 2.7
+-- PYTHON_LIBDIR = /mpcdf/soft/SLE_12_SP3/packages/x86_64/anaconda/2.5.1.0/lib
+-- PYTHON_LIBRARIES = /usr/lib64/libpython2.7.so
+-- Looking for 3 include files sys/time.h, ..., unistd.h
+-- Looking for 3 include files sys/time.h, ..., unistd.h - found
+-- Applying patch on internal Boost because of Intel compiler
+CMake Warning at CMakeLists.txt:231 (message):
+  Not building system documentation because Doxygen not found.
+
+
+-- Generate user documentation via /mpcdf/soft/SLE_12_SP3/packages/x86_64/anaconda/2.5.1.0/bin/sphinx-build: make ug
+-- Generate LaTeX manual via /mpcdf/soft/SLE_12_SP3/packages/x86_64/anaconda/2.5.1.0/bin/sphinx-build: make ug-pdf
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /u/dspiller/espressopp-2.0/build
+Scanning dependencies of target symlink
+Scanning dependencies of target gitversion
+Scanning dependencies of target ewald_eppDeserno_comparison_testdata
+Scanning dependencies of target pi_water_testdata
+Scanning dependencies of target polymer_melt_tabulated_testdata
+[  0%] Built target symlink
+-- Found Git: /mpcdf/soft/SLE_12_SP3/packages/x86_64/git/2.16.4/bin/git (found version "2.16.4") 
+[  0%] Built target ewald_eppDeserno_comparison_testdata
+[  0%] Built target polymer_melt_tabulated_testdata
+Scanning dependencies of target dl
+Scanning dependencies of target TDforce_testdata
+Scanning dependencies of target FreeEnergyCompensation_testdata
+[  0%] Building C object contrib/mpi4py/CMakeFiles/dl.dir/mpi4py-2.0.0/src/dynload.c.o
+[  0%] Built target gitversion
+Scanning dependencies of target PIAdResS_testdata
+[  0%] Built target FreeEnergyCompensation_testdata
+[  0%] Built target TDforce_testdata
+[  0%] Built target pi_water_testdata
+[  0%] Built target PIAdResS_testdata
+Scanning dependencies of target MPI
+[  0%] Building C object contrib/mpi4py/CMakeFiles/MPI.dir/mpi4py-2.0.0/src/MPI.c.o
+[  1%] Linking C shared library dl.so
+Scanning dependencies of target Array4DTest
+[  1%] Building CXX object testsuite/Array4DTest/CMakeFiles/Array4DTest.dir/Array4DTest.cpp.o
+[  1%] Built target dl
+In file included from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/unit_test_parameters.hpp(19),
+                 from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/impl/compiler_log_formatter.ipp(23),
+                 from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/included/unit_test.hpp(15),
+                 from /u/dspiller/espressopp-2.0/testsuite/Array4DTest/Array4DTest.cpp(22):
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h(700): error: identifier "_Node_allocator" is undefined
+  	    _GLIBCXX_NOEXCEPT_IF(
+  	    ^
+          detected during instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=boost::runtime::cstring, _Val=std::pair<const boost::runtime::cstring, boost::runtime::argument_ptr>, _KeyOfValue=std::_Select1st<std::pair<const boost::runtime::cstring, boost::runtime::argument_ptr>>, _Compare=std::less<boost::runtime::cstring>, _Alloc=std::allocator<std::pair<const boost::runtime::cstring,
+                    boost::runtime::argument_ptr>>, _Key_compare=std::less<boost::runtime::cstring>, <unnamed>=true]" at line 124 of "/u/dspiller/espressopp-2.0/contrib/boost/boost/test/utils/runtime/argument.hpp"
+
+In file included from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/unit_test_parameters.hpp(19),
+                 from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/impl/compiler_log_formatter.ipp(23),
+                 from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/included/unit_test.hpp(15),
+                 from /u/dspiller/espressopp-2.0/testsuite/Array4DTest/Array4DTest.cpp(22):
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/type_traits(921): error: class "std::__is_default_constructible_atom<<error-type>>" has no member class "type"
+      : public __is_default_constructible_atom<_Tp>::type
+                                                     ^
+          detected during:
+            instantiation of class "std::__is_default_constructible_safe<_Tp, false> [with _Tp=<error-type>]" at line 927
+            instantiation of class "std::is_default_constructible<_Tp> [with _Tp=<error-type>]" at line 144
+            instantiation of class "std::__and_<_B1, _B2> [with _B1=std::is_default_constructible<<error-type>>, _B2=std::__is_nt_default_constructible_impl<<error-type>, false>]" at line 995
+            instantiation of class "std::is_nothrow_default_constructible<_Tp> [with _Tp=<error-type>]" at line 700 of "/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h"
+            instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=boost::runtime::cstring, _Val=std::pair<const boost::runtime::cstring, boost::runtime::argument_ptr>, _KeyOfValue=std::_Select1st<std::pair<const boost::runtime::cstring, boost::runtime::argument_ptr>>, _Compare=std::less<boost::runtime::cstring>, _Alloc=std::allocator<std::pair<const boost::runtime::cstring, boost::runtime::argument_ptr>>,
+                      _Key_compare=std::less<boost::runtime::cstring>, <unnamed>=true]" at line 124 of "/u/dspiller/espressopp-2.0/contrib/boost/boost/test/utils/runtime/argument.hpp"
+
+In file included from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/unit_test_parameters.hpp(19),
+                 from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/impl/compiler_log_formatter.ipp(23),
+                 from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/included/unit_test.hpp(15),
+                 from /u/dspiller/espressopp-2.0/testsuite/Array4DTest/Array4DTest.cpp(22):
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/type_traits(921): error: not a class or struct name
+      : public __is_default_constructible_atom<_Tp>::type
+               ^
+          detected during:
+            instantiation of class "std::__is_default_constructible_safe<_Tp, false> [with _Tp=<error-type>]" at line 927
+            instantiation of class "std::is_default_constructible<_Tp> [with _Tp=<error-type>]" at line 144
+            instantiation of class "std::__and_<_B1, _B2> [with _B1=std::is_default_constructible<<error-type>>, _B2=std::__is_nt_default_constructible_impl<<error-type>, false>]" at line 995
+            instantiation of class "std::is_nothrow_default_constructible<_Tp> [with _Tp=<error-type>]" at line 700 of "/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h"
+            instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=boost::runtime::cstring, _Val=std::pair<const boost::runtime::cstring, boost::runtime::argument_ptr>, _KeyOfValue=std::_Select1st<std::pair<const boost::runtime::cstring, boost::runtime::argument_ptr>>, _Compare=std::less<boost::runtime::cstring>, _Alloc=std::allocator<std::pair<const boost::runtime::cstring, boost::runtime::argument_ptr>>,
+                      _Key_compare=std::less<boost::runtime::cstring>, <unnamed>=true]" at line 124 of "/u/dspiller/espressopp-2.0/contrib/boost/boost/test/utils/runtime/argument.hpp"
+
+In file included from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/unit_test_parameters.hpp(19),
+                 from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/impl/compiler_log_formatter.ipp(23),
+                 from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/included/unit_test.hpp(15),
+                 from /u/dspiller/espressopp-2.0/testsuite/Array4DTest/Array4DTest.cpp(22):
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/type_traits(927): error: class "std::__is_default_constructible_safe<<error-type>, false>" has no member class "type"
+      : public __is_default_constructible_safe<_Tp>::type
+                                                     ^
+          detected during:
+            instantiation of class "std::is_default_constructible<_Tp> [with _Tp=<error-type>]" at line 144
+            instantiation of class "std::__and_<_B1, _B2> [with _B1=std::is_default_constructible<<error-type>>, _B2=std::__is_nt_default_constructible_impl<<error-type>, false>]" at line 995
+            instantiation of class "std::is_nothrow_default_constructible<_Tp> [with _Tp=<error-type>]" at line 700 of "/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h"
+            instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=boost::runtime::cstring, _Val=std::pair<const boost::runtime::cstring, boost::runtime::argument_ptr>, _KeyOfValue=std::_Select1st<std::pair<const boost::runtime::cstring, boost::runtime::argument_ptr>>, _Compare=std::less<boost::runtime::cstring>, _Alloc=std::allocator<std::pair<const boost::runtime::cstring, boost::runtime::argument_ptr>>,
+                      _Key_compare=std::less<boost::runtime::cstring>, <unnamed>=true]" at line 124 of "/u/dspiller/espressopp-2.0/contrib/boost/boost/test/utils/runtime/argument.hpp"
+
+In file included from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/unit_test_parameters.hpp(19),
+                 from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/impl/compiler_log_formatter.ipp(23),
+                 from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/included/unit_test.hpp(15),
+                 from /u/dspiller/espressopp-2.0/testsuite/Array4DTest/Array4DTest.cpp(22):
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/type_traits(927): error: not a class or struct name
+      : public __is_default_constructible_safe<_Tp>::type
+               ^
+          detected during:
+            instantiation of class "std::is_default_constructible<_Tp> [with _Tp=<error-type>]" at line 144
+            instantiation of class "std::__and_<_B1, _B2> [with _B1=std::is_default_constructible<<error-type>>, _B2=std::__is_nt_default_constructible_impl<<error-type>, false>]" at line 995
+            instantiation of class "std::is_nothrow_default_constructible<_Tp> [with _Tp=<error-type>]" at line 700 of "/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h"
+            instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=boost::runtime::cstring, _Val=std::pair<const boost::runtime::cstring, boost::runtime::argument_ptr>, _KeyOfValue=std::_Select1st<std::pair<const boost::runtime::cstring, boost::runtime::argument_ptr>>, _Compare=std::less<boost::runtime::cstring>, _Alloc=std::allocator<std::pair<const boost::runtime::cstring, boost::runtime::argument_ptr>>,
+                      _Key_compare=std::less<boost::runtime::cstring>, <unnamed>=true]" at line 124 of "/u/dspiller/espressopp-2.0/contrib/boost/boost/test/utils/runtime/argument.hpp"
+
+In file included from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/unit_test_parameters.hpp(19),
+                 from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/impl/compiler_log_formatter.ipp(23),
+                 from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/included/unit_test.hpp(15),
+                 from /u/dspiller/espressopp-2.0/testsuite/Array4DTest/Array4DTest.cpp(22):
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/type_traits(144): error: class "std::is_default_constructible<<error-type>>" has no member "value"
+      : public conditional<_B1::value, _B2, _B1>::type
+                                ^
+          detected during:
+            instantiation of class "std::__and_<_B1, _B2> [with _B1=std::is_default_constructible<<error-type>>, _B2=std::__is_nt_default_constructible_impl<<error-type>, false>]" at line 995
+            instantiation of class "std::is_nothrow_default_constructible<_Tp> [with _Tp=<error-type>]" at line 700 of "/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h"
+            instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=boost::runtime::cstring, _Val=std::pair<const boost::runtime::cstring, boost::runtime::argument_ptr>, _KeyOfValue=std::_Select1st<std::pair<const boost::runtime::cstring, boost::runtime::argument_ptr>>, _Compare=std::less<boost::runtime::cstring>, _Alloc=std::allocator<std::pair<const boost::runtime::cstring, boost::runtime::argument_ptr>>,
+                      _Key_compare=std::less<boost::runtime::cstring>, <unnamed>=true]" at line 124 of "/u/dspiller/espressopp-2.0/contrib/boost/boost/test/utils/runtime/argument.hpp"
+
+In file included from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/impl/compiler_log_formatter.ipp(25),
+                 from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/included/unit_test.hpp(15),
+                 from /u/dspiller/espressopp-2.0/testsuite/Array4DTest/Array4DTest.cpp(22):
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h(700): error: identifier "_Node_allocator" is undefined
+  	    _GLIBCXX_NOEXCEPT_IF(
+  	    ^
+          detected during instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=boost::unit_test::counter_t={unsigned long}, _Val=std::pair<const boost::unit_test::counter_t={unsigned long}, boost::unit_test::test_unit_id={unsigned long}>, _KeyOfValue=std::_Select1st<std::pair<const boost::unit_test::counter_t={unsigned long}, boost::unit_test::test_unit_id={unsigned long}>>,
+                    _Compare=std::less<boost::unit_test::counter_t={unsigned long}>, _Alloc=std::allocator<std::pair<const boost::unit_test::counter_t={unsigned long}, boost::unit_test::test_unit_id={unsigned long}>>, _Key_compare=std::less<boost::unit_test::counter_t={unsigned long}>, <unnamed>=true]" at line 202 of "/u/dspiller/espressopp-2.0/contrib/boost/boost/test/tree/test_unit.hpp"
+
+In file included from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/included/unit_test.hpp(16),
+                 from /u/dspiller/espressopp-2.0/testsuite/Array4DTest/Array4DTest.cpp(22):
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h(700): error: identifier "_Node_allocator" is undefined
+  	    _GLIBCXX_NOEXCEPT_IF(
+  	    ^
+          detected during instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=std::__cxx11::string, _Val=std::pair<const std::__cxx11::string, boost::debug::dbg_starter>, _KeyOfValue=std::_Select1st<std::pair<const std::__cxx11::string, boost::debug::dbg_starter>>, _Compare=std::less<std::__cxx11::string>, _Alloc=std::allocator<std::pair<const std::__cxx11::string, boost::debug::dbg_starter>>,
+                    _Key_compare=std::less<std::__cxx11::string>, <unnamed>=true]" at line 601 of "/u/dspiller/espressopp-2.0/contrib/boost/boost/test/impl/debug.ipp"
+
+In file included from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/included/unit_test.hpp(18),
+                 from /u/dspiller/espressopp-2.0/testsuite/Array4DTest/Array4DTest.cpp(22):
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h(700): error: identifier "_Node_allocator" is undefined
+  	    _GLIBCXX_NOEXCEPT_IF(
+  	    ^
+          detected during instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=boost::unit_test::test_unit_id={unsigned long}, _Val=std::pair<const boost::unit_test::test_unit_id={unsigned long}, boost::unit_test::framework::impl::order_info>, _KeyOfValue=std::_Select1st<std::pair<const boost::unit_test::test_unit_id={unsigned long}, boost::unit_test::framework::impl::order_info>>,
+                    _Compare=std::less<boost::unit_test::counter_t={unsigned long}>, _Alloc=std::allocator<std::pair<const boost::unit_test::test_unit_id={unsigned long}, boost::unit_test::framework::impl::order_info>>, _Key_compare=std::less<boost::unit_test::counter_t={unsigned long}>, <unnamed>=true]" at line 100 of "/u/dspiller/espressopp-2.0/contrib/boost/boost/test/impl/framework.ipp"
+
+In file included from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/included/unit_test.hpp(18),
+                 from /u/dspiller/espressopp-2.0/testsuite/Array4DTest/Array4DTest.cpp(22):
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h(700): error: identifier "_Node_allocator" is undefined
+  	    _GLIBCXX_NOEXCEPT_IF(
+  	    ^
+          detected during instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=boost::unit_test::test_unit_id={unsigned long}, _Val=std::pair<const boost::unit_test::test_unit_id={unsigned long}, boost::unit_test::test_unit *>, _KeyOfValue=std::_Select1st<std::pair<const boost::unit_test::test_unit_id={unsigned long}, boost::unit_test::test_unit *>>, _Compare=std::less<boost::unit_test::counter_t={unsigned
+                    long}>, _Alloc=std::allocator<std::pair<const boost::unit_test::test_unit_id={unsigned long}, boost::unit_test::test_unit *>>, _Key_compare=std::less<boost::unit_test::counter_t={unsigned long}>, <unnamed>=true]" at line 792 of "/u/dspiller/espressopp-2.0/contrib/boost/boost/test/impl/framework.ipp"
+
+In file included from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/included/unit_test.hpp(18),
+                 from /u/dspiller/espressopp-2.0/testsuite/Array4DTest/Array4DTest.cpp(22):
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h(700): error: identifier "_Node_allocator" is undefined
+  	    _GLIBCXX_NOEXCEPT_IF(
+  	    ^
+          detected during instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=boost::unit_test::test_observer *, _Val=boost::unit_test::test_observer *, _KeyOfValue=std::_Identity<boost::unit_test::test_observer *>, _Compare=boost::unit_test::framework::state::priority_order, _Alloc=std::allocator<boost::unit_test::test_observer *>, _Key_compare=boost::unit_test::framework::state::priority_order,
+                    <unnamed>=true]" at line 792 of "/u/dspiller/espressopp-2.0/contrib/boost/boost/test/impl/framework.ipp"
+
+In file included from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/included/unit_test.hpp(22),
+                 from /u/dspiller/espressopp-2.0/testsuite/Array4DTest/Array4DTest.cpp(22):
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h(700): error: identifier "_Node_allocator" is undefined
+  	    _GLIBCXX_NOEXCEPT_IF(
+  	    ^
+          detected during instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=boost::unit_test::test_unit_id={unsigned long}, _Val=std::pair<const boost::unit_test::test_unit_id={unsigned long}, boost::unit_test::test_results>, _KeyOfValue=std::_Select1st<std::pair<const boost::unit_test::test_unit_id={unsigned long}, boost::unit_test::test_results>>,
+                    _Compare=std::less<boost::unit_test::counter_t={unsigned long}>, _Alloc=std::allocator<std::pair<const boost::unit_test::test_unit_id={unsigned long}, boost::unit_test::test_results>>, _Key_compare=std::less<boost::unit_test::counter_t={unsigned long}>, <unnamed>=true]" at line 116 of "/u/dspiller/espressopp-2.0/contrib/boost/boost/test/impl/results_collector.ipp"
+
+In file included from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/included/unit_test.hpp(27),
+                 from /u/dspiller/espressopp-2.0/testsuite/Array4DTest/Array4DTest.cpp(22):
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h(700): error: identifier "_Node_allocator" is undefined
+  	    _GLIBCXX_NOEXCEPT_IF(
+  	    ^
+          detected during instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=std::__cxx11::string, _Val=std::__cxx11::string, _KeyOfValue=std::_Identity<std::__cxx11::string>, _Compare=std::less<std::__cxx11::string>, _Alloc=std::allocator<std::__cxx11::string>, _Key_compare=std::less<std::__cxx11::string>, <unnamed>=true]" at line 175 of
+                    "/u/dspiller/espressopp-2.0/contrib/boost/boost/test/impl/unit_test_main.ipp"
+
+In file included from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/impl/unit_test_parameters.ipp(35),
+                 from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/included/unit_test.hpp(29),
+                 from /u/dspiller/espressopp-2.0/testsuite/Array4DTest/Array4DTest.cpp(22):
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h(700): error: identifier "_Node_allocator" is undefined
+  	    _GLIBCXX_NOEXCEPT_IF(
+  	    ^
+          detected during instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=boost::runtime::cstring, _Val=std::pair<const boost::runtime::cstring, boost::runtime::basic_param_ptr>, _KeyOfValue=std::_Select1st<std::pair<const boost::runtime::cstring, boost::runtime::basic_param_ptr>>, _Compare=boost::runtime::parameters_store::lg_compare, _Alloc=std::allocator<std::pair<const boost::runtime::cstring,
+                    boost::runtime::basic_param_ptr>>, _Key_compare=boost::runtime::parameters_store::lg_compare, <unnamed>=true]" at line 465 of "/u/dspiller/espressopp-2.0/contrib/boost/boost/test/utils/runtime/parameter.hpp"
+
+In file included from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/impl/unit_test_parameters.ipp(38),
+                 from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/included/unit_test.hpp(29),
+                 from /u/dspiller/espressopp-2.0/testsuite/Array4DTest/Array4DTest.cpp(22):
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h(700): error: identifier "_Node_allocator" is undefined
+  	    _GLIBCXX_NOEXCEPT_IF(
+  	    ^
+          detected during instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=char, _Val=std::pair<const char, boost::runtime::cla::rt_cla_detail::parameter_trie_ptr>, _KeyOfValue=std::_Select1st<std::pair<const char, boost::runtime::cla::rt_cla_detail::parameter_trie_ptr>>, _Compare=std::less<char>, _Alloc=std::allocator<std::pair<const char, boost::runtime::cla::rt_cla_detail::parameter_trie_ptr>>,
+                    _Key_compare=std::less<char>, <unnamed>=true]" at line 105 of "/u/dspiller/espressopp-2.0/contrib/boost/boost/test/utils/runtime/cla/parser.hpp"
+
+In file included from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/impl/unit_test_parameters.ipp(38),
+                 from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/included/unit_test.hpp(29),
+                 from /u/dspiller/espressopp-2.0/testsuite/Array4DTest/Array4DTest.cpp(22):
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h(700): error: identifier "_Node_allocator" is undefined
+  	    _GLIBCXX_NOEXCEPT_IF(
+  	    ^
+          detected during instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=boost::runtime::cstring, _Val=std::pair<const boost::runtime::cstring, boost::runtime::cla::parser::trie_ptr>, _KeyOfValue=std::_Select1st<std::pair<const boost::runtime::cstring, boost::runtime::cla::parser::trie_ptr>>, _Compare=std::less<boost::runtime::cstring>, _Alloc=std::allocator<std::pair<const boost::runtime::cstring,
+                    boost::runtime::cla::parser::trie_ptr>>, _Key_compare=std::less<boost::runtime::cstring>, <unnamed>=true]" at line 483 of "/u/dspiller/espressopp-2.0/contrib/boost/boost/test/utils/runtime/cla/parser.hpp"
+
+In file included from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/impl/unit_test_parameters.ipp(38),
+                 from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/included/unit_test.hpp(29),
+                 from /u/dspiller/espressopp-2.0/testsuite/Array4DTest/Array4DTest.cpp(22):
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h(700): error: identifier "_Node_allocator" is undefined
+  	    _GLIBCXX_NOEXCEPT_IF(
+  	    ^
+          detected during instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=const boost::runtime::parameter_cla_id *, _Val=const boost::runtime::parameter_cla_id *, _KeyOfValue=std::_Identity<const boost::runtime::parameter_cla_id *>, _Compare=std::less<const boost::runtime::parameter_cla_id *>, _Alloc=std::allocator<const boost::runtime::parameter_cla_id *>, _Key_compare=std::less<const
+                    boost::runtime::parameter_cla_id *>, <unnamed>=true]" at line 433 of "/u/dspiller/espressopp-2.0/contrib/boost/boost/test/utils/runtime/cla/parser.hpp"
+
+In file included from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/included/unit_test.hpp(29),
+                 from /u/dspiller/espressopp-2.0/testsuite/Array4DTest/Array4DTest.cpp(22):
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h(700): error: identifier "_Node_allocator" is undefined
+  	    _GLIBCXX_NOEXCEPT_IF(
+  	    ^
+          detected during instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=boost::runtime::cstring, _Val=std::pair<const boost::runtime::cstring, boost::unit_test::output_format>, _KeyOfValue=std::_Select1st<std::pair<const boost::runtime::cstring, boost::unit_test::output_format>>, _Compare=std::less<boost::runtime::cstring>, _Alloc=std::allocator<std::pair<const boost::runtime::cstring,
+                    boost::unit_test::output_format>>, _Key_compare=std::less<boost::runtime::cstring>, <unnamed>=true]" at line 224 of "/u/dspiller/espressopp-2.0/contrib/boost/boost/test/impl/unit_test_parameters.ipp"
+
+In file included from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/included/unit_test.hpp(29),
+                 from /u/dspiller/espressopp-2.0/testsuite/Array4DTest/Array4DTest.cpp(22):
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h(700): error: identifier "_Node_allocator" is undefined
+  	    _GLIBCXX_NOEXCEPT_IF(
+  	    ^
+          detected during instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=boost::runtime::cstring, _Val=std::pair<const boost::runtime::cstring, boost::unit_test::log_level>, _KeyOfValue=std::_Select1st<std::pair<const boost::runtime::cstring, boost::unit_test::log_level>>, _Compare=std::less<boost::runtime::cstring>, _Alloc=std::allocator<std::pair<const boost::runtime::cstring,
+                    boost::unit_test::log_level>>, _Key_compare=std::less<boost::runtime::cstring>, <unnamed>=true]" at line 296 of "/u/dspiller/espressopp-2.0/contrib/boost/boost/test/impl/unit_test_parameters.ipp"
+
+In file included from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/included/unit_test.hpp(29),
+                 from /u/dspiller/espressopp-2.0/testsuite/Array4DTest/Array4DTest.cpp(22):
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h(700): error: identifier "_Node_allocator" is undefined
+  	    _GLIBCXX_NOEXCEPT_IF(
+  	    ^
+          detected during instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=boost::runtime::cstring, _Val=std::pair<const boost::runtime::cstring, boost::unit_test::report_level>, _KeyOfValue=std::_Select1st<std::pair<const boost::runtime::cstring, boost::unit_test::report_level>>, _Compare=std::less<boost::runtime::cstring>, _Alloc=std::allocator<std::pair<const boost::runtime::cstring,
+                    boost::unit_test::report_level>>, _Key_compare=std::less<boost::runtime::cstring>, <unnamed>=true]" at line 446 of "/u/dspiller/espressopp-2.0/contrib/boost/boost/test/impl/unit_test_parameters.ipp"
+
+In file included from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/impl/xml_log_formatter.ipp(24),
+                 from /u/dspiller/espressopp-2.0/contrib/boost/boost/test/included/unit_test.hpp(30),
+                 from /u/dspiller/espressopp-2.0/testsuite/Array4DTest/Array4DTest.cpp(22):
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h(700): error: identifier "_Node_allocator" is undefined
+  	    _GLIBCXX_NOEXCEPT_IF(
+  	    ^
+          detected during instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=char, _Val=std::pair<const char, const char *>, _KeyOfValue=std::_Select1st<std::pair<const char, const char *>>, _Compare=std::less<char>, _Alloc=std::allocator<std::pair<const char, const char *>>, _Key_compare=std::less<char>, <unnamed>=true]" at line 46 of
+                    "/u/dspiller/espressopp-2.0/contrib/boost/boost/test/utils/xml_printer.hpp"
+
+Scanning dependencies of target espressopp_boost
+compilation aborted for /u/dspiller/espressopp-2.0/testsuite/Array4DTest/Array4DTest.cpp (code 2)
+testsuite/Array4DTest/CMakeFiles/Array4DTest.dir/build.make:62: recipe for target 'testsuite/Array4DTest/CMakeFiles/Array4DTest.dir/Array4DTest.cpp.o' failed
+make[2]: *** [testsuite/Array4DTest/CMakeFiles/Array4DTest.dir/Array4DTest.cpp.o] Error 2
+CMakeFiles/Makefile2:784: recipe for target 'testsuite/Array4DTest/CMakeFiles/Array4DTest.dir/all' failed
+make[1]: *** [testsuite/Array4DTest/CMakeFiles/Array4DTest.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[  1%] Building CXX object contrib/boost/CMakeFiles/espressopp_boost.dir/libs/chrono/src/process_cpu_clocks.cpp.o
+[  1%] Building CXX object contrib/boost/CMakeFiles/espressopp_boost.dir/libs/chrono/src/chrono.cpp.o
+[  2%] Building CXX object contrib/boost/CMakeFiles/espressopp_boost.dir/libs/chrono/src/thread_clock.cpp.o
+[  2%] Building CXX object contrib/boost/CMakeFiles/espressopp_boost.dir/libs/date_time/src/gregorian/date_generators.cpp.o
+[  2%] Building CXX object contrib/boost/CMakeFiles/espressopp_boost.dir/libs/date_time/src/gregorian/greg_month.cpp.o
+[  3%] Building CXX object contrib/boost/CMakeFiles/espressopp_boost.dir/libs/date_time/src/gregorian/greg_weekday.cpp.o
+[  3%] Building CXX object contrib/boost/CMakeFiles/espressopp_boost.dir/libs/date_time/src/gregorian/gregorian_types.cpp.o
+[  3%] Building CXX object contrib/boost/CMakeFiles/espressopp_boost.dir/libs/date_time/src/posix_time/posix_time_types.cpp.o
+[  3%] Building CXX object contrib/boost/CMakeFiles/espressopp_boost.dir/libs/filesystem/src/codecvt_error_category.cpp.o
+[  4%] Building CXX object contrib/boost/CMakeFiles/espressopp_boost.dir/libs/filesystem/src/operations.cpp.o
+[  4%] Building CXX object contrib/boost/CMakeFiles/espressopp_boost.dir/libs/filesystem/src/path.cpp.o
+[  4%] Building CXX object contrib/boost/CMakeFiles/espressopp_boost.dir/libs/filesystem/src/path_traits.cpp.o
+[  5%] Building CXX object contrib/boost/CMakeFiles/espressopp_boost.dir/libs/filesystem/src/portability.cpp.o
+[  5%] Building CXX object contrib/boost/CMakeFiles/espressopp_boost.dir/libs/filesystem/src/utf8_codecvt_facet.cpp.o
+[  5%] Building CXX object contrib/boost/CMakeFiles/espressopp_boost.dir/libs/filesystem/src/unique_path.cpp.o
+[  6%] Building CXX object contrib/boost/CMakeFiles/espressopp_boost.dir/libs/filesystem/src/windows_file_codecvt.cpp.o
+[  6%] Building CXX object contrib/boost/CMakeFiles/espressopp_boost.dir/libs/mpi/src/broadcast.cpp.o
+[  6%] Building CXX object contrib/boost/CMakeFiles/espressopp_boost.dir/libs/mpi/src/communicator.cpp.o
+[  7%] Linking C shared library MPI.so
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h(700): error: identifier "_Node_allocator" is undefined
+  	    _GLIBCXX_NOEXCEPT_IF(
+  	    ^
+          detected during instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=std::__cxx11::string, _Val=std::pair<const std::__cxx11::string, unsigned short>, _KeyOfValue=std::_Select1st<std::pair<const std::__cxx11::string, unsigned short>>, _Compare=std::less<std::__cxx11::string>, _Alloc=std::allocator<std::pair<const std::__cxx11::string, unsigned short>>, _Key_compare=std::less<std::__cxx11::string>,
+                    <unnamed>=true]" at line 37 of "/u/dspiller/espressopp-2.0/contrib/boost/libs/date_time/src/gregorian/greg_month.cpp"
+
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/type_traits(921): error: class "std::__is_default_constructible_atom<<error-type>>" has no member class "type"
+      : public __is_default_constructible_atom<_Tp>::type
+                                                     ^
+          detected during:
+            instantiation of class "std::__is_default_constructible_safe<_Tp, false> [with _Tp=<error-type>]" at line 927
+            instantiation of class "std::is_default_constructible<_Tp> [with _Tp=<error-type>]" at line 144
+            instantiation of class "std::__and_<_B1, _B2> [with _B1=std::is_default_constructible<<error-type>>, _B2=std::__is_nt_default_constructible_impl<<error-type>, false>]" at line 995
+            instantiation of class "std::is_nothrow_default_constructible<_Tp> [with _Tp=<error-type>]" at line 700 of "/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h"
+            instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=std::__cxx11::string, _Val=std::pair<const std::__cxx11::string, unsigned short>, _KeyOfValue=std::_Select1st<std::pair<const std::__cxx11::string, unsigned short>>, _Compare=std::less<std::__cxx11::string>, _Alloc=std::allocator<std::pair<const std::__cxx11::string, unsigned short>>, _Key_compare=std::less<std::__cxx11::string>,
+                      <unnamed>=true]" at line 37 of "/u/dspiller/espressopp-2.0/contrib/boost/libs/date_time/src/gregorian/greg_month.cpp"
+
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/type_traits(921): error: not a class or struct name
+      : public __is_default_constructible_atom<_Tp>::type
+               ^
+          detected during:
+            instantiation of class "std::__is_default_constructible_safe<_Tp, false> [with _Tp=<error-type>]" at line 927
+            instantiation of class "std::is_default_constructible<_Tp> [with _Tp=<error-type>]" at line 144
+            instantiation of class "std::__and_<_B1, _B2> [with _B1=std::is_default_constructible<<error-type>>, _B2=std::__is_nt_default_constructible_impl<<error-type>, false>]" at line 995
+            instantiation of class "std::is_nothrow_default_constructible<_Tp> [with _Tp=<error-type>]" at line 700 of "/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h"
+            instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=std::__cxx11::string, _Val=std::pair<const std::__cxx11::string, unsigned short>, _KeyOfValue=std::_Select1st<std::pair<const std::__cxx11::string, unsigned short>>, _Compare=std::less<std::__cxx11::string>, _Alloc=std::allocator<std::pair<const std::__cxx11::string, unsigned short>>, _Key_compare=std::less<std::__cxx11::string>,
+                      <unnamed>=true]" at line 37 of "/u/dspiller/espressopp-2.0/contrib/boost/libs/date_time/src/gregorian/greg_month.cpp"
+
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/type_traits(927): error: class "std::__is_default_constructible_safe<<error-type>, false>" has no member class "type"
+      : public __is_default_constructible_safe<_Tp>::type
+                                                     ^
+          detected during:
+            instantiation of class "std::is_default_constructible<_Tp> [with _Tp=<error-type>]" at line 144
+            instantiation of class "std::__and_<_B1, _B2> [with _B1=std::is_default_constructible<<error-type>>, _B2=std::__is_nt_default_constructible_impl<<error-type>, false>]" at line 995
+            instantiation of class "std::is_nothrow_default_constructible<_Tp> [with _Tp=<error-type>]" at line 700 of "/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h"
+            instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=std::__cxx11::string, _Val=std::pair<const std::__cxx11::string, unsigned short>, _KeyOfValue=std::_Select1st<std::pair<const std::__cxx11::string, unsigned short>>, _Compare=std::less<std::__cxx11::string>, _Alloc=std::allocator<std::pair<const std::__cxx11::string, unsigned short>>, _Key_compare=std::less<std::__cxx11::string>,
+                      <unnamed>=true]" at line 37 of "/u/dspiller/espressopp-2.0/contrib/boost/libs/date_time/src/gregorian/greg_month.cpp"
+
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/type_traits(927): error: not a class or struct name
+      : public __is_default_constructible_safe<_Tp>::type
+               ^
+          detected during:
+            instantiation of class "std::is_default_constructible<_Tp> [with _Tp=<error-type>]" at line 144
+            instantiation of class "std::__and_<_B1, _B2> [with _B1=std::is_default_constructible<<error-type>>, _B2=std::__is_nt_default_constructible_impl<<error-type>, false>]" at line 995
+            instantiation of class "std::is_nothrow_default_constructible<_Tp> [with _Tp=<error-type>]" at line 700 of "/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h"
+            instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=std::__cxx11::string, _Val=std::pair<const std::__cxx11::string, unsigned short>, _KeyOfValue=std::_Select1st<std::pair<const std::__cxx11::string, unsigned short>>, _Compare=std::less<std::__cxx11::string>, _Alloc=std::allocator<std::pair<const std::__cxx11::string, unsigned short>>, _Key_compare=std::less<std::__cxx11::string>,
+                      <unnamed>=true]" at line 37 of "/u/dspiller/espressopp-2.0/contrib/boost/libs/date_time/src/gregorian/greg_month.cpp"
+
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/type_traits(144): error: class "std::is_default_constructible<<error-type>>" has no member "value"
+      : public conditional<_B1::value, _B2, _B1>::type
+                                ^
+          detected during:
+            instantiation of class "std::__and_<_B1, _B2> [with _B1=std::is_default_constructible<<error-type>>, _B2=std::__is_nt_default_constructible_impl<<error-type>, false>]" at line 995
+            instantiation of class "std::is_nothrow_default_constructible<_Tp> [with _Tp=<error-type>]" at line 700 of "/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h"
+            instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=std::__cxx11::string, _Val=std::pair<const std::__cxx11::string, unsigned short>, _KeyOfValue=std::_Select1st<std::pair<const std::__cxx11::string, unsigned short>>, _Compare=std::less<std::__cxx11::string>, _Alloc=std::allocator<std::pair<const std::__cxx11::string, unsigned short>>, _Key_compare=std::less<std::__cxx11::string>,
+                      <unnamed>=true]" at line 37 of "/u/dspiller/espressopp-2.0/contrib/boost/libs/date_time/src/gregorian/greg_month.cpp"
+
+[  7%] Building CXX object contrib/boost/CMakeFiles/espressopp_boost.dir/libs/mpi/src/computation_tree.cpp.o
+[  8%] Building CXX object contrib/boost/CMakeFiles/espressopp_boost.dir/libs/mpi/src/content_oarchive.cpp.o
+[  8%] Building CXX object contrib/boost/CMakeFiles/espressopp_boost.dir/libs/mpi/src/environment.cpp.o
+[  8%] Building CXX object contrib/boost/CMakeFiles/espressopp_boost.dir/libs/mpi/src/exception.cpp.o
+[  9%] Building CXX object contrib/boost/CMakeFiles/espressopp_boost.dir/libs/mpi/src/graph_communicator.cpp.o
+In file included from /u/dspiller/espressopp-2.0/contrib/boost/boost/archive/impl/archive_serializer_map.ipp(17),
+                 from /u/dspiller/espressopp-2.0/contrib/boost/libs/mpi/src/content_oarchive.cpp(11):
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h(700): error: identifier "_Node_allocator" is undefined
+  	    _GLIBCXX_NOEXCEPT_IF(
+  	    ^
+          detected during instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=const boost::archive::detail::basic_serializer *, _Val=const boost::archive::detail::basic_serializer *, _KeyOfValue=std::_Identity<const boost::archive::detail::basic_serializer *>, _Compare=boost::archive::detail::basic_serializer_map::type_info_pointer_compare, _Alloc=std::allocator<const
+                    boost::archive::detail::basic_serializer *>, _Key_compare=boost::archive::detail::basic_serializer_map::type_info_pointer_compare, <unnamed>=true]" at line 61 of "/u/dspiller/espressopp-2.0/contrib/boost/boost/archive/detail/basic_serializer_map.hpp"
+
+In file included from /u/dspiller/espressopp-2.0/contrib/boost/boost/archive/impl/archive_serializer_map.ipp(17),
+                 from /u/dspiller/espressopp-2.0/contrib/boost/libs/mpi/src/content_oarchive.cpp(11):
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/type_traits(921): error: class "std::__is_default_constructible_atom<<error-type>>" has no member class "type"
+      : public __is_default_constructible_atom<_Tp>::type
+                                                     ^
+          detected during:
+            instantiation of class "std::__is_default_constructible_safe<_Tp, false> [with _Tp=<error-type>]" at line 927
+            instantiation of class "std::is_default_constructible<_Tp> [with _Tp=<error-type>]" at line 144
+            instantiation of class "std::__and_<_B1, _B2> [with _B1=std::is_default_constructible<<error-type>>, _B2=std::__is_nt_default_constructible_impl<<error-type>, false>]" at line 995
+            instantiation of class "std::is_nothrow_default_constructible<_Tp> [with _Tp=<error-type>]" at line 700 of "/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h"
+            instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=const boost::archive::detail::basic_serializer *, _Val=const boost::archive::detail::basic_serializer *, _KeyOfValue=std::_Identity<const boost::archive::detail::basic_serializer *>, _Compare=boost::archive::detail::basic_serializer_map::type_info_pointer_compare, _Alloc=std::allocator<const boost::archive::detail::basic_serializer *>,
+                      _Key_compare=boost::archive::detail::basic_serializer_map::type_info_pointer_compare, <unnamed>=true]" at line 61 of "/u/dspiller/espressopp-2.0/contrib/boost/boost/archive/detail/basic_serializer_map.hpp"
+
+In file included from /u/dspiller/espressopp-2.0/contrib/boost/boost/archive/impl/archive_serializer_map.ipp(17),
+                 from /u/dspiller/espressopp-2.0/contrib/boost/libs/mpi/src/content_oarchive.cpp(11):
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/type_traits(921): error: not a class or struct name
+      : public __is_default_constructible_atom<_Tp>::type
+               ^
+          detected during:
+            instantiation of class "std::__is_default_constructible_safe<_Tp, false> [with _Tp=<error-type>]" at line 927
+            instantiation of class "std::is_default_constructible<_Tp> [with _Tp=<error-type>]" at line 144
+            instantiation of class "std::__and_<_B1, _B2> [with _B1=std::is_default_constructible<<error-type>>, _B2=std::__is_nt_default_constructible_impl<<error-type>, false>]" at line 995
+            instantiation of class "std::is_nothrow_default_constructible<_Tp> [with _Tp=<error-type>]" at line 700 of "/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h"
+            instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=const boost::archive::detail::basic_serializer *, _Val=const boost::archive::detail::basic_serializer *, _KeyOfValue=std::_Identity<const boost::archive::detail::basic_serializer *>, _Compare=boost::archive::detail::basic_serializer_map::type_info_pointer_compare, _Alloc=std::allocator<const boost::archive::detail::basic_serializer *>,
+                      _Key_compare=boost::archive::detail::basic_serializer_map::type_info_pointer_compare, <unnamed>=true]" at line 61 of "/u/dspiller/espressopp-2.0/contrib/boost/boost/archive/detail/basic_serializer_map.hpp"
+
+In file included from /u/dspiller/espressopp-2.0/contrib/boost/boost/archive/impl/archive_serializer_map.ipp(17),
+                 from /u/dspiller/espressopp-2.0/contrib/boost/libs/mpi/src/content_oarchive.cpp(11):
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/type_traits(927): error: class "std::__is_default_constructible_safe<<error-type>, false>" has no member class "type"
+      : public __is_default_constructible_safe<_Tp>::type
+                                                     ^
+          detected during:
+            instantiation of class "std::is_default_constructible<_Tp> [with _Tp=<error-type>]" at line 144
+            instantiation of class "std::__and_<_B1, _B2> [with _B1=std::is_default_constructible<<error-type>>, _B2=std::__is_nt_default_constructible_impl<<error-type>, false>]" at line 995
+            instantiation of class "std::is_nothrow_default_constructible<_Tp> [with _Tp=<error-type>]" at line 700 of "/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h"
+            instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=const boost::archive::detail::basic_serializer *, _Val=const boost::archive::detail::basic_serializer *, _KeyOfValue=std::_Identity<const boost::archive::detail::basic_serializer *>, _Compare=boost::archive::detail::basic_serializer_map::type_info_pointer_compare, _Alloc=std::allocator<const boost::archive::detail::basic_serializer *>,
+                      _Key_compare=boost::archive::detail::basic_serializer_map::type_info_pointer_compare, <unnamed>=true]" at line 61 of "/u/dspiller/espressopp-2.0/contrib/boost/boost/archive/detail/basic_serializer_map.hpp"
+
+In file included from /u/dspiller/espressopp-2.0/contrib/boost/boost/archive/impl/archive_serializer_map.ipp(17),
+                 from /u/dspiller/espressopp-2.0/contrib/boost/libs/mpi/src/content_oarchive.cpp(11):
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/type_traits(927): error: not a class or struct name
+      : public __is_default_constructible_safe<_Tp>::type
+               ^
+          detected during:
+            instantiation of class "std::is_default_constructible<_Tp> [with _Tp=<error-type>]" at line 144
+            instantiation of class "std::__and_<_B1, _B2> [with _B1=std::is_default_constructible<<error-type>>, _B2=std::__is_nt_default_constructible_impl<<error-type>, false>]" at line 995
+            instantiation of class "std::is_nothrow_default_constructible<_Tp> [with _Tp=<error-type>]" at line 700 of "/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h"
+            instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=const boost::archive::detail::basic_serializer *, _Val=const boost::archive::detail::basic_serializer *, _KeyOfValue=std::_Identity<const boost::archive::detail::basic_serializer *>, _Compare=boost::archive::detail::basic_serializer_map::type_info_pointer_compare, _Alloc=std::allocator<const boost::archive::detail::basic_serializer *>,
+                      _Key_compare=boost::archive::detail::basic_serializer_map::type_info_pointer_compare, <unnamed>=true]" at line 61 of "/u/dspiller/espressopp-2.0/contrib/boost/boost/archive/detail/basic_serializer_map.hpp"
+
+In file included from /u/dspiller/espressopp-2.0/contrib/boost/boost/archive/impl/archive_serializer_map.ipp(17),
+                 from /u/dspiller/espressopp-2.0/contrib/boost/libs/mpi/src/content_oarchive.cpp(11):
+/draco/u/dspiller/local/bin/../include/c++/8.1.0/type_traits(144): error: class "std::is_default_constructible<<error-type>>" has no member "value"
+      : public conditional<_B1::value, _B2, _B1>::type
+                                ^
+          detected during:
+            instantiation of class "std::__and_<_B1, _B2> [with _B1=std::is_default_constructible<<error-type>>, _B2=std::__is_nt_default_constructible_impl<<error-type>, false>]" at line 995
+            instantiation of class "std::is_nothrow_default_constructible<_Tp> [with _Tp=<error-type>]" at line 700 of "/draco/u/dspiller/local/bin/../include/c++/8.1.0/bits/stl_tree.h"
+            instantiation of "std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree_impl<_Key_compare, <unnamed>>::_Rb_tree_impl() [with _Key=const boost::archive::detail::basic_serializer *, _Val=const boost::archive::detail::basic_serializer *, _KeyOfValue=std::_Identity<const boost::archive::detail::basic_serializer *>, _Compare=boost::archive::detail::basic_serializer_map::type_info_pointer_compare, _Alloc=std::allocator<const boost::archive::detail::basic_serializer *>,
+                      _Key_compare=boost::archive::detail::basic_serializer_map::type_info_pointer_compare, <unnamed>=true]" at line 61 of "/u/dspiller/espressopp-2.0/contrib/boost/boost/archive/detail/basic_serializer_map.hpp"
+
+compilation aborted for /u/dspiller/espressopp-2.0/contrib/boost/libs/date_time/src/gregorian/greg_month.cpp (code 2)
+contrib/boost/CMakeFiles/espressopp_boost.dir/build.make:114: recipe for target 'contrib/boost/CMakeFiles/espressopp_boost.dir/libs/date_time/src/gregorian/greg_month.cpp.o' failed
+make[2]: *** [contrib/boost/CMakeFiles/espressopp_boost.dir/libs/date_time/src/gregorian/greg_month.cpp.o] Error 2
+make[2]: *** Waiting for unfinished jobs....
+compilation aborted for /u/dspiller/espressopp-2.0/contrib/boost/libs/mpi/src/content_oarchive.cpp (code 2)
+contrib/boost/CMakeFiles/espressopp_boost.dir/build.make:309: recipe for target 'contrib/boost/CMakeFiles/espressopp_boost.dir/libs/mpi/src/content_oarchive.cpp.o' failed
+make[2]: *** [contrib/boost/CMakeFiles/espressopp_boost.dir/libs/mpi/src/content_oarchive.cpp.o] Error 2
+CMakeFiles/Makefile2:296: recipe for target 'contrib/boost/CMakeFiles/espressopp_boost.dir/all' failed
+make[1]: *** [contrib/boost/CMakeFiles/espressopp_boost.dir/all] Error 2
+[  9%] Built target MPI
+Makefile:140: recipe for target 'all' failed
+make: *** [all] Error 2

@@ -1,0 +1,3 @@
+num_chains: 1782
+monomers_per_chain: 128
+system_size: 64.0
