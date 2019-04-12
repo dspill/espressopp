@@ -1,7 +1,6 @@
 # vim:fdm=indent
 import espressopp as epp
 import mpi4py.MPI as MPI
-from espressopp import Int3D, Real3D
 import os
 import os.path
 import re
@@ -9,7 +8,10 @@ import time
 import glob
 import math
 import subprocess
+import subprocess
+import sys
 from shutil import copy2, rmtree, copyfileobj
+from espressopp import Int3D, Real3D
 
 def fileOutput(system, integrator, filename, per_atom=True, pressure_tensor=False, full_box=False):
     NPart  = epp.analysis.NPart(system).compute()
@@ -363,10 +365,11 @@ def setupSystem(p, xyzfilename=None, phi=0., with_lb=False):
 
     system.storage.decompose()
 
-    # add FENE bonds
-    potFENE   = epp.interaction.FENE(K=p['KF'], r0=p['r0'], rMax=p['rMax'])
-    interFENE = epp.interaction.FixedPairListFENE(system, bondlist, potFENE)
-    system.addInteraction(interFENE)
+    if p['degree_of_polymerization'] > 1:
+        # add FENE bonds
+        potFENE   = epp.interaction.FENE(K=p['KF'], r0=p['r0'], rMax=p['rMax'])
+        interFENE = epp.interaction.FixedPairListFENE(system, bondlist, potFENE)
+        system.addInteraction(interFENE)
 
     # add Lattice Boltzmann
     if with_lb:
@@ -475,53 +478,6 @@ def setupLB(p, system, integrator, nodeGrid):
     print "Starting simulation at step " + str(start_step)
     integrator.step = start_step
     return lb
-
-
-def compactifyDump(filename="./dump.tar", compress=False):
-    # find largest step
-    files = glob.glob('./dump/fluid*.0*')
-    if len(files) == 0:
-        start_step = 0
-    else:
-        steps = []
-        for file in files:
-            new = re.search('.+fluid(.+)\.0\.dat', file)
-            steps.append(int(new.group(1)))
-
-        steps.sort()
-        start_step = max(steps)
-
-    print "largest step = " + str(start_step)
-
-    # copy most recent output to separate directory
-    if not os.path.isdir("./dump_last"):
-        print "creating dump_last"
-        os.mkdir("./dump_last")
-
-    files = glob.glob("./dump/*"+str(start_step)+".*")
-    print "copying files"
-    for file in files:
-        copy2(file, "./dump_last/")
-
-    # compress remaining output and remove directory if successful
-    if os.path.isdir("./dump"):
-        print "compressing dump"
-        if compress:
-            if subprocess.call(['tar', '-cf', filename, '-I', 'pigz', './dump']) == 0:
-                print "compression successful, removing dump"
-                # rmtree("./dump")
-        else:
-            if subprocess.call(['tar', '-cf', filename, './dump']) == 0:
-                print "taring successful, removing dump"
-                # rmtree("./dump")
-
-
-def concatenateFiles(outfile, file_list):
-    with open(outfile, 'wb') as wfd:
-        for f in file_list:
-            with open(f, 'rb') as fd:
-                copyfileobj(fd, wfd, 1024*1024*10)
-                #10MB per writing chunk to avoid reading big file into memory.
 
 
 def nonInteractingPolymerMelt(num_chains, monomers_per_chain, box=(0, 0, 0),
