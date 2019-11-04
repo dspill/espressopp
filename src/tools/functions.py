@@ -1,16 +1,12 @@
 # vim:fdm=indent
-import espressopp as epp
-import mpi4py.MPI as MPI
 import os
 import os.path
 import re
 import time
 import glob
 import math
-import subprocess
-import subprocess
-import sys
-from shutil import copy2, rmtree, copyfileobj
+import mpi4py.MPI as MPI
+import espressopp as epp
 from espressopp import Int3D, Real3D
 
 def fileOutput(system, integrator, filename, per_atom=True, pressure_tensor=False, full_box=False):
@@ -40,8 +36,8 @@ def fileOutput(system, integrator, filename, per_atom=True, pressure_tensor=Fals
 
     observables.append(('L_x', box[0]))
     if full_box:
-            observables.append(('Ly', box[1]))
-            observables.append(('Lz', box[2]))
+        observables.append(('Ly', box[1]))
+        observables.append(('Lz', box[2]))
 
     if per_atom:
         Ek /= NPart
@@ -71,11 +67,11 @@ def fileOutput(system, integrator, filename, per_atom=True, pressure_tensor=Fals
     string = ''
     if step == 0:
         string += '# '
-        for k in range(len(observables)):
-            string += '%-16s ' % ('%d: ' % k + observables[k][0])
+        for k, obs in enumerate(observables):
+            string += '%-16s ' % ('%d: ' % k + obs[0])
     else:
-        for k in range(len(observables)):
-            string += '%16.9e ' % observables[k][1]
+        for k, obs in enumerate(observables):
+            string += '%16.9e ' % obs[1]
 
     string += '\n'
     filestream.write(string)
@@ -167,8 +163,8 @@ def customWritexyzStream(filestream, system, velocities=True, unfolded=True):
 
 def printInteractions(system):
     for k in range(system.getNumberOfInteractions()):
-        print "interaction ", k
-        print "    ", system.getInteraction(k)
+        print("interaction ", k)
+        print("    ", system.getInteraction(k))
 
 
 def arrangeBeadsInSquareShape(system, chain_index, start, monomers_per_chain,
@@ -213,7 +209,7 @@ def arrangeBeadsInSquareShape(system, chain_index, start, monomers_per_chain,
 def arrangeChainsInSquareShape(system, num_chains, monomers_per_chain, L, center,
                                bondlen):
 
-    print "Arranging in square shape"
+    print("Arranging in square shape")
     width = math.ceil(math.sqrt(num_chains))
     separation = L / width
 
@@ -273,7 +269,7 @@ def arrangeBeadsInCubeShape(system, chain_index, start, monomers_per_chain,
             dy = 0
             dz = bondlen
 
-        if((im // (width * width)) % 2 == 0):
+        if (im // (width * width)) % 2 == 0:
             mult = 1
         else:
             mult = -1
@@ -288,7 +284,7 @@ def arrangeBeadsInCubeShape(system, chain_index, start, monomers_per_chain,
 def arrangeChainsInCubeShape(system, num_chains, monomers_per_chain, L,
                              bondlen):
 
-    print "Arranging in cube shape"
+    print("Arranging in cube shape")
     width = math.ceil(math.pow(num_chains, 1./3.))
     separation = float(L) / width
 
@@ -330,9 +326,9 @@ def setupSystem(p, xyzfilename=None, phi=0., with_lb=False):
     system.bc      = epp.bc.OrthorhombicBC(system.rng, p['box'])
     system.skin    = p['skin']
 
-    nodeGrid       = epp.tools.decomp.nodeGrid(epp.MPI.COMM_WORLD.size)
-    # nodeGrid       = epp.tools.decomp.nodeGrid(epp.MPI.COMM_WORLD.size,
-                                               # p['box'], p['rc'], p['skin'])
+    # nodeGrid       = epp.tools.decomp.nodeGrid(epp.MPI.COMM_WORLD.size)
+    nodeGrid       = epp.tools.decomp.nodeGrid(epp.MPI.COMM_WORLD.size,
+                                               p['box'], p['rc'], p['skin'])
     cellGrid       = epp.tools.decomp.cellGrid(p['box'], nodeGrid, p['rc'],
                                                p['skin'])
     system.storage = epp.storage.DomainDecomposition(system, nodeGrid,
@@ -353,14 +349,23 @@ def setupSystem(p, xyzfilename=None, phi=0., with_lb=False):
     thermostat.temperature = p['temperature']
     integrator.addExtension(thermostat)
 
+    # optional ZConfinement
+    if 'K_zconf' in p:
+        K_zconf = p['K_zconf']
+        if K_zconf > 0:
+            print('Confining System in the z-direction.')
+            addZConfinement(system, K_zconf)
+        else:
+            raise RuntimeError('Value K_zconf = %f inadmissable' % K_zconf)
+
     # Configuration
     # Use existing configuration
     if os.path.isfile(xyzfilename):
-        print "continuing with configuration " + xyzfilename
+        print("continuing with configuration " + xyzfilename)
         bondlist = readConfiguration(p, system, xyzfilename)
     # Make new configuration
     else:
-        print "starting wih NEW configuration"
+        print("starting with NEW configuration")
         bondlist = generateConfiguration(p, system)
 
     system.storage.decompose()
@@ -385,13 +390,14 @@ def readConfiguration(p, system, xyzfilename):
         = epp.tools.readxyz(xyzfilename)
 
     if p['box'] != (Lxf, Lyf, Lzf):
-        print("ERROR: input box does not match parameters")
-        exit()
-        
+        raise RuntimeError("input box " + str(p['box']) +
+                " does not match parameter box " + str((Lxf, Lyf, Lzf)))
+
 
     if len(pidf) != p['number_of_particles']:
-        print("ERROR: input number of particles does not match parameters")
-        exit()
+        raise RuntimeError("input number of particles " +
+                str(len(pidf)) + "does not match parameter number of particles " +
+                str(p['number_of_particles']))
 
     props    = ['id', 'type', 'mass', 'pos', 'v']
     bondlist = epp.FixedPairList(system.storage)
@@ -420,7 +426,7 @@ def generateConfiguration(p, system):
         chain = []
         bonds = []
         for k in xrange(p['degree_of_polymerization']):
-            idx  = i * p['degree_of_polymerization'] + k + 1  # TODO +1
+            idx  = i * p['degree_of_polymerization'] + k + 1
             part = [idx, 0, p['mass'], epp.Real3D(0.), epp.Real3D(0.)]
             chain.append(part)
 
@@ -438,7 +444,7 @@ def generateConfiguration(p, system):
 
 
 def setupLB(p, system, integrator, nodeGrid):
-    print "adding Lattice-Boltzmann"
+    print("adding Lattice-Boltzmann")
     # define a LB grid
     lb = epp.integrator.LatticeBoltzmann(system, Int3D(nodeGrid))
     integrator.addExtension(lb)
@@ -464,7 +470,7 @@ def setupLB(p, system, integrator, nodeGrid):
 
     # find largest step {{{2
     files = glob.glob('./dump/fluid*.0*')
-    if len(files) == 0:
+    if files:
         start_step = 0
     else:
         steps = []
@@ -475,7 +481,7 @@ def setupLB(p, system, integrator, nodeGrid):
         steps.sort()
         start_step = max(steps)
 
-    print "Starting simulation at step " + str(start_step)
+    print("Starting simulation at step " + str(start_step))
     integrator.step = start_step
     return lb
 
@@ -488,18 +494,21 @@ def nonInteractingPolymerMelt(num_chains, monomers_per_chain, box=(0, 0, 0),
 
     # if given, read configuration from file
     if xyzfilename and xyzrfilename:
-        print "ERROR: only one of xyzfilename (only xyz data) or xyzrfilename (additional particle radius data) can be provided."
-        sys.exit(1)
+        raise RuntimeError("only one of xyzfilename (only xyz data) or "
+                "xyzrfilename (additional particle radius data) can be "
+                "provided.")
 
     if xyzrfilename:
-        pidf, typef, xposf, yposf, zposf, xvelf, yvelf, zvelf, Lxf, Lyf, Lzf, radiusf = epp.tools.readxyzr(xyzrfilename)
+        pidf, _, xposf, yposf, zposf, xvelf, yvelf, zvelf, Lxf, Lyf, Lzf, _ \
+                = epp.tools.readxyzr(xyzrfilename)
         box = (Lxf, Lyf, Lzf)
     elif xyzfilename:
-        pidf, typef, xposf, yposf, zposf, xvelf, yvelf, zvelf, Lxf, Lyf, Lzf = epp.tools.readxyz(xyzfilename)
+        pidf, _, xposf, yposf, zposf, xvelf, yvelf, zvelf, Lxf, Lyf, Lzf \
+                = epp.tools.readxyz(xyzfilename)
         box = (Lxf, Lyf, Lzf)
     else:
         if box[0] <= 0 or box[1] <= 0 or box[2] <= 0:
-            print "WARNING: no valid box size specified, box size set to (100, 100, 100) !"
+            raise RuntimeError('Invalid box was set')
 
     system         = epp.System()
     system.rng     = epp.esutil.RNG()
@@ -521,7 +530,7 @@ def nonInteractingPolymerMelt(num_chains, monomers_per_chain, box=(0, 0, 0),
 
     integrator     = epp.integrator.VelocityVerlet(system)
     integrator.dt  = dt
-    if(temperature is not None):
+    if temperature is not None:
         thermostat             = epp.integrator.LangevinThermostat(system)
         thermostat.gamma       = 1.0
         thermostat.temperature = temperature
@@ -532,21 +541,21 @@ def nonInteractingPolymerMelt(num_chains, monomers_per_chain, box=(0, 0, 0),
     if xyzfilename:
         props    = ['id', 'type', 'mass', 'pos', 'v']
         bondlist = epp.FixedPairList(system.storage)
-        type = 0
+        tpe = 0
         for i in xrange(num_chains):
             chain = []
             bonds = []
             for k in xrange(monomers_per_chain):
                 idx  = i * monomers_per_chain + k
                 # print idx + 1
-                # part = [pidf[idx], type, mass,
-                part = [idx + 1, type, mass,
+                # part = [pidf[idx], tpe, mass,
+                part = [idx + 1, tpe, mass,
                         epp.Real3D(xposf[idx], yposf[idx], zposf[idx]),
                         epp.Real3D(xvelf[idx], yvelf[idx], zvelf[idx])]
                 chain.append(part)
                 if k > 0:
                     bonds.append((pidf[idx-1], pidf[idx]))
-            type += 1
+            tpe += 1
             system.storage.addParticles(chain, *props)
             system.storage.decompose()
             bondlist.addBonds(bonds)
@@ -556,16 +565,17 @@ def nonInteractingPolymerMelt(num_chains, monomers_per_chain, box=(0, 0, 0),
         vel_zero = epp.Real3D(0.0, 0.0, 0.0)
         bondlist = epp.FixedPairList(system.storage)
         pid      = 1
-        type     = 0
+        tpe     = 0
         chain    = []
         for i in xrange(num_chains):
             startpos = system.bc.getRandomPos()
-            positions, bonds = epp.tools.topology.polymerRW(pid, startpos, monomers_per_chain, bondlen)
+            positions, bonds = epp.tools.topology.polymerRW(pid, startpos,
+                    monomers_per_chain, bondlen)
             for k in xrange(monomers_per_chain):
-                part = [pid + k, type, mass, positions[k], vel_zero]
+                part = [pid + k, tpe, mass, positions[k], vel_zero]
                 chain.append(part)
             pid += monomers_per_chain
-            type += 1
+            tpe += 1
             system.storage.addParticles(chain, *props)
             system.storage.decompose()
             chain = []

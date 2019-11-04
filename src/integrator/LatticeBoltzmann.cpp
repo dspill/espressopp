@@ -1151,8 +1151,8 @@ namespace espressopp {
 
          // timer //
          real timeEnd = timeSaveLBConf.getElapsedTime() - timeStart;
-         printf("step %lld, CPU %d: saved LB-conf and MD forces in %f seconds\n",
-               integrator->getStep(), system.comm->rank(), timeEnd);
+         //printf("step %lld, CPU %d: saved LB-conf and MD forces in %f seconds\n",
+               //integrator->getStep(), system.comm->rank(), timeEnd);
 
       }
 

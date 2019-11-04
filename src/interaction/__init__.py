@@ -55,6 +55,8 @@ from espressopp.interaction.VSphereSelf import *
 from espressopp.interaction.VSpherePair import *
 from espressopp.interaction.MirrorLennardJones import *
 
+from espressopp.interaction.ZConfinement import *
+
 from espressopp.interaction.HarmonicUnique import *
 
 from espressopp.interaction.AngularCosineSquared import *

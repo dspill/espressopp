@@ -51,6 +51,8 @@
 #include "LennardJones93Wall.hpp"
 #include "MirrorLennardJones.hpp"
 
+#include "ZConfinement.hpp"
+
 #include "Tabulated.hpp"
 #include "TabulatedAngular.hpp"
 
@@ -122,6 +124,8 @@ namespace espressopp {
       HarmonicTrap::registerPython();
       LennardJones93Wall::registerPython();
       MirrorLennardJones::registerPython();
+
+      ZConfinement::registerPython();
       
       AngularPotential::registerPython();
       AngularUniquePotential::registerPython();
