@@ -68,6 +68,7 @@ def fileOutput(system, integrator, filename, per_atom=True,
         string += '# '
         for k, obs in enumerate(observables):
             string += '%-16s ' % ('%d: ' % k + obs[0])
+        string += '\n'
         # write observables
         for k, obs in enumerate(observables):
             string += '%16.9e ' % obs[1]
