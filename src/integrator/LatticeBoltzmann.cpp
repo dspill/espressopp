@@ -462,7 +462,7 @@ namespace espressopp {
             collideStream ();
          }
 
-         //if (_stepNum % _profStep == 0 && _stepNum!=0) {
+         if (_stepNum % _profStep == 0 && _stepNum!=0) {
             //printf ("CPU %d: colstr took %f sec, comm % f, swapping %f\n",
                     //getSystem()->comm->rank(), time_colstr, time_comm, time_sw);
 

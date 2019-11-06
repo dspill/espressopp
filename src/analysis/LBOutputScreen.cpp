@@ -31,7 +31,6 @@ namespace espressopp {
       : LBOutput(system, latticeboltzmann) {}
 
       void LBOutputScreen::writeOutput() {
-         return
          /* It is a not straightforward way. The idea is that the Output onto
           the Screen takes place when the step is already finished, i.e. at
           (t+ dt). However, the LB couples to the integrator signal befIntV,
@@ -86,8 +85,8 @@ namespace espressopp {
 
             // output MD momentum //
             setMDMom(_totCMVel); // need this for testsuite
-            printf("MD mom at (+1/2dt): %17.12f %17.12f %17.12f \n",
-                   _totCMVel[0], _totCMVel[1], _totCMVel[2]);
+            //printf("MD mom at (+1/2dt): %17.12f %17.12f %17.12f \n",
+                   //_totCMVel[0], _totCMVel[1], _totCMVel[2]);
 
             if (_step != 0) {
                // calculate time performance
@@ -96,11 +95,11 @@ namespace espressopp {
                setLBTimerOld( getLBTimerNew() );
 
                // output LB statistics
-               printf ("%ld LB steps on %ld nodes done in %f sec, relative MLUPS: %f \n",
-                       madeLBSteps, latSize, timelb,
-                       madeLBSteps * latSize * 1e-6 / timelb);
-               printf ("Speed in LJ units: %f tau / sec \n",
-                       (_step - getOldStepNum()) * _timestep / timelb);
+               //printf ("%ld LB steps on %ld nodes done in %f sec, relative MLUPS: %f \n",
+                       //madeLBSteps, latSize, timelb,
+                       //madeLBSteps * latSize * 1e-6 / timelb);
+               //printf ("Speed in LJ units: %f tau / sec \n",
+                       //(_step - getOldStepNum()) * _timestep / timelb);
 
             } else {
                // timers //
@@ -110,8 +109,8 @@ namespace espressopp {
 
             setOldStepNum(_step);
 
-            printf("------------------------------------");
-            printf("-------------------------------------\n");
+            //printf("------------------------------------");
+            //printf("-------------------------------------\n");
          }
       }
 
@@ -148,8 +147,8 @@ namespace espressopp {
          // output LB momentum //
          if (system.comm->rank() == 0) {
             setLBMom(result); // need this for testsuite
-            printf ("after step %d:\n", latticeboltzmann->getStepNum());
-            printf ("LB mom in LJ units: %17.12f %17.12f %17.12f \n",
+            //printf ("after step %d:\n", latticeboltzmann->getStepNum());
+            //printf ("LB mom in LJ units: %17.12f %17.12f %17.12f \n",
                     result[0], result[1], result[2]);
          }
       }
