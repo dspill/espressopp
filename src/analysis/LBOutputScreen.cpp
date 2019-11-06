@@ -31,6 +31,7 @@ namespace espressopp {
       : LBOutput(system, latticeboltzmann) {}
 
       void LBOutputScreen::writeOutput() {
+         return
          /* It is a not straightforward way. The idea is that the Output onto
           the Screen takes place when the step is already finished, i.e. at
           (t+ dt). However, the LB couples to the integrator signal befIntV,
