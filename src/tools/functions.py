@@ -1,15 +1,13 @@
 # vim:fdm=indent
 import os
-import os.path
-import re
 import time
-import glob
 import math
 import mpi4py.MPI as MPI
 import espressopp as epp
 from espressopp import Int3D, Real3D
 
-def fileOutput(system, integrator, filename, per_atom=True, pressure_tensor=False, full_box=False):
+def fileOutput(system, integrator, filename, per_atom=True,
+        pressure_tensor=False, full_box=False):
     NPart  = epp.analysis.NPart(system).compute()
     T      = epp.analysis.Temperature(system).compute()
     Pij    = epp.analysis.PressureTensor(system).compute()
@@ -66,10 +64,15 @@ def fileOutput(system, integrator, filename, per_atom=True, pressure_tensor=Fals
 
     string = ''
     if step == 0:
+        # write labels
         string += '# '
         for k, obs in enumerate(observables):
             string += '%-16s ' % ('%d: ' % k + obs[0])
+        # write observables
+        for k, obs in enumerate(observables):
+            string += '%16.9e ' % obs[1]
     else:
+        # write observables
         for k, obs in enumerate(observables):
             string += '%16.9e ' % obs[1]
 
@@ -469,20 +472,21 @@ def setupLB(p, system, integrator, nodeGrid):
     integrator.addExtension(outScreen)
 
     # find largest step {{{2
-    files = glob.glob('./dump/fluid*.0*')
-    if files:
-        start_step = 0
-    else:
-        steps = []
-        for file in files:
-            new = re.search('.+fluid(.+)\.0\.dat', file)
-            steps.append(int(new.group(1)))
+    # if os.path.isdir('./dump'):
+        # files = glob.glob('./dump/fluid*.0*')
+        # if files:
+            # start_step = 0
+        # else:
+            # steps = []
+            # for file in files:
+                # new = re.search('.+fluid(.+)\.0\.dat', file)
+                # steps.append(int(new.group(1)))
 
-        steps.sort()
-        start_step = max(steps)
+            # steps.sort()
+            # start_step = max(steps)
 
-    print("Starting simulation at step " + str(start_step))
-    integrator.step = start_step
+        # print("Starting simulation at step " + str(start_step))
+        # integrator.step = start_step
     return lb
 
 
