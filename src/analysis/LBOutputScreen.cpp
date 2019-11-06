@@ -149,7 +149,7 @@ namespace espressopp {
             setLBMom(result); // need this for testsuite
             //printf ("after step %d:\n", latticeboltzmann->getStepNum());
             //printf ("LB mom in LJ units: %17.12f %17.12f %17.12f \n",
-                    result[0], result[1], result[2]);
+                    //result[0], result[1], result[2]);
          }
       }
 
