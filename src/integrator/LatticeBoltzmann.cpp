@@ -463,8 +463,8 @@ namespace espressopp {
          }
 
          if (_stepNum % _profStep == 0 && _stepNum!=0) {
-            printf ("CPU %d: colstr took %f sec, comm % f, swapping %f\n",
-                    getSystem()->comm->rank(), time_colstr, time_comm, time_sw);
+            //printf ("CPU %d: colstr took %f sec, comm % f, swapping %f\n",
+                    //getSystem()->comm->rank(), time_colstr, time_comm, time_sw);
 
             colstream.reset();
             comm.reset();
@@ -788,9 +788,9 @@ namespace espressopp {
             Real3D specCmVel = findCMVelMD();
 
             if (_myRank == 0) {
-               printf("Get rid of the drift velocity per particle of  ");
-               printf("%18.14f %18.14f %18.14f \n",
-                      specCmVel[0], specCmVel[1], specCmVel[2]);
+               //printf("Get rid of the drift velocity per particle of  ");
+               //printf("%18.14f %18.14f %18.14f \n",
+                      //specCmVel[0], specCmVel[1], specCmVel[2]);
             }
 
             galileanTransf(specCmVel);
@@ -798,10 +798,10 @@ namespace espressopp {
             // check if everything worked correctly
             specCmVel = findCMVelMD();
             if (_myRank == 0) {
-               printf("CMvel per particle after Galilean transform is ");
-               printf("%18.14f %18.14f %18.14f \n",
-                      specCmVel[0], specCmVel[1], specCmVel[2]);
-               printf("-------------------------------------\n");
+               //printf("CMvel per particle after Galilean transform is ");
+               //printf("%18.14f %18.14f %18.14f \n",
+                      //specCmVel[0], specCmVel[1], specCmVel[2]);
+               //printf("-------------------------------------\n");
             }
          } else if (_step != 0 && _coupling && _restart) {
             // if it is a real restart
@@ -999,8 +999,8 @@ namespace espressopp {
 
             // timer //
             real timeEnd = timeReadLBConf.getElapsedTime() - timeStart;
-            printf("step %lld, CPU %d: read LB-conf and MD forces in %f seconds\n",
-                   integrator->getStep(), getSystem()->comm->rank(), timeEnd);
+            //printf("step %lld, CPU %d: read LB-conf and MD forces in %f seconds\n",
+                   //integrator->getStep(), getSystem()->comm->rank(), timeEnd);
          }
       }
 
@@ -1151,8 +1151,8 @@ namespace espressopp {
 
          // timer //
          real timeEnd = timeSaveLBConf.getElapsedTime() - timeStart;
-         printf("step %lld, CPU %d: saved LB-conf and MD forces in %f seconds\n",
-               integrator->getStep(), system.comm->rank(), timeEnd);
+         //printf("step %lld, CPU %d: saved LB-conf and MD forces in %f seconds\n",
+               //integrator->getStep(), system.comm->rank(), timeEnd);
 
       }
 
