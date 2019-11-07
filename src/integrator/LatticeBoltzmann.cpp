@@ -463,8 +463,8 @@ namespace espressopp {
          }
 
          if (_stepNum % _profStep == 0 && _stepNum!=0) {
-            //printf ("CPU %d: colstr took %f sec, comm % f, swapping %f\n",
-                    //getSystem()->comm->rank(), time_colstr, time_comm, time_sw);
+            printf ("CPU %d: colstr took %f sec, comm % f, swapping %f\n",
+                    getSystem()->comm->rank(), time_colstr, time_comm, time_sw);
 
             colstream.reset();
             comm.reset();
@@ -1151,8 +1151,8 @@ namespace espressopp {
 
          // timer //
          real timeEnd = timeSaveLBConf.getElapsedTime() - timeStart;
-         //printf("step %lld, CPU %d: saved LB-conf and MD forces in %f seconds\n",
-               //integrator->getStep(), system.comm->rank(), timeEnd);
+         printf("step %lld, CPU %d: saved LB-conf and MD forces in %f seconds\n",
+               integrator->getStep(), system.comm->rank(), timeEnd);
 
       }
 

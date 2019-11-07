@@ -107,5 +107,4 @@ for k in range(nsteps):
 end_time = time.clock()
 espressopp.tools.analyse.info(system, integrator)
 espressopp.tools.analyse.final_info(system, integrator, vl, start_time, end_time)
-espressopp.tools.pdbwrite("conf.pdb", system, molsize=4, append=False)
 

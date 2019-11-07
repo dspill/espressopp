@@ -62,8 +62,6 @@
 #include "AssociationReaction.hpp"
 #include "MinimizeEnergy.hpp"
 
-#include "VolumeScaler.hpp"
-
 #include "EmptyExtension.hpp"
 
 namespace espressopp {
@@ -108,7 +106,6 @@ namespace espressopp {
       AssociationReaction::registerPython();
       MinimizeEnergy::registerPython();
       EmptyExtension::registerPython();
-      VolumeScaler::registerPython();
     }
   }
 }

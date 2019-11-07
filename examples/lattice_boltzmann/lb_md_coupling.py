@@ -67,4 +67,3 @@ for k in range (3):
     # output LB configuration
     lb.keepLBDump()     # flag to keep previously saved LB state
     lb.saveLBConf()     # saves current state of the LB fluid
-

@@ -157,7 +157,6 @@ end_time = time.clock()
 espressopp.tools.analyse.info(system, integrator)
 espressopp.tools.analyse.final_info(system, integrator, vl, start_time, end_time)
 
-# file output
 filename = "nb1_start.res"
 espressopp.tools.pdb.pdbwrite(filename, system, monomers_per_chain, False)
 #espressopp.tools.pdb.fastwritepdb("nb1_start_fast.res", system, monomers_per_chain, False)

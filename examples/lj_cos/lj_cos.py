@@ -27,8 +27,8 @@ from espressopp import Int3D
 from espressopp import Real3D
 
 # initial parameters of the simulation
-num_chains     = 2
-mon_per_chain  = 10
+num_chains     = 5
+mon_per_chain  = 100
 L              = 20
 box            = (L, L, L)
 bondlen        = 0.97
@@ -224,5 +224,3 @@ def findRee():
     f_stat.close()
 
 main()
-
-espressopp.tools.pdbwrite("conf.pdb", system, molsize=mon_per_chain, append=False)
