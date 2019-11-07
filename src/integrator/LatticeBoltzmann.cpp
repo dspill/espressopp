@@ -788,9 +788,10 @@ namespace espressopp {
             Real3D specCmVel = findCMVelMD();
 
             if (_myRank == 0) {
-               //printf("Get rid of the drift velocity per particle of  ");
-               //printf("%18.14f %18.14f %18.14f \n",
-                      //specCmVel[0], specCmVel[1], specCmVel[2]);
+               printf("Starting with new LB configuration\n");
+               printf("Get rid of the drift velocity per particle of  ");
+               printf("%18.14f %18.14f %18.14f \n",
+                      specCmVel[0], specCmVel[1], specCmVel[2]);
             }
 
             galileanTransf(specCmVel);
@@ -798,10 +799,10 @@ namespace espressopp {
             // check if everything worked correctly
             specCmVel = findCMVelMD();
             if (_myRank == 0) {
-               //printf("CMvel per particle after Galilean transform is ");
-               //printf("%18.14f %18.14f %18.14f \n",
-                      //specCmVel[0], specCmVel[1], specCmVel[2]);
-               //printf("-------------------------------------\n");
+               printf("CMvel per particle after Galilean transform is ");
+               printf("%18.14f %18.14f %18.14f \n",
+                      specCmVel[0], specCmVel[1], specCmVel[2]);
+               printf("-------------------------------------\n");
             }
          } else if (_step != 0 && _coupling && _restart) {
             // if it is a real restart
@@ -837,6 +838,7 @@ namespace espressopp {
 /*******************************************************************************************/
 
       void LatticeBoltzmann::readLBConf (int _mode) {
+         int _myRank = getSystem()->comm->rank();
          if (_mode == 0) {
             // reloading values from memory
             System& system = getSystemRef();
@@ -848,6 +850,9 @@ namespace espressopp {
             }
 
          } else {
+            if (_myRank == 0) {
+               printf("Restarting with LB configuration from ./dump\n");
+            }
             timeReadLBConf.reset();
             real timeStart = timeReadLBConf.getElapsedTime();
 
@@ -999,8 +1004,8 @@ namespace espressopp {
 
             // timer //
             real timeEnd = timeReadLBConf.getElapsedTime() - timeStart;
-            //printf("step %lld, CPU %d: read LB-conf and MD forces in %f seconds\n",
-                   //integrator->getStep(), getSystem()->comm->rank(), timeEnd);
+            printf("step %lld, CPU %d: read LB-conf and MD forces in %f seconds\n",
+                   integrator->getStep(), getSystem()->comm->rank(), timeEnd);
          }
       }
 

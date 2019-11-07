@@ -2,6 +2,8 @@
 import os
 import time
 import math
+import glob
+import re
 import mpi4py.MPI as MPI
 import espressopp as epp
 from espressopp import Int3D, Real3D
@@ -473,21 +475,22 @@ def setupLB(p, system, integrator, nodeGrid):
     integrator.addExtension(outScreen)
 
     # find largest step {{{2
-    # if os.path.isdir('./dump'):
-        # files = glob.glob('./dump/fluid*.0*')
-        # if files:
-            # start_step = 0
-        # else:
-            # steps = []
-            # for file in files:
-                # new = re.search('.+fluid(.+)\.0\.dat', file)
-                # steps.append(int(new.group(1)))
+    if os.path.isdir('./dump'):
+        print("Found dump folder")
+        files = glob.glob('./dump/fluid*.0*')
+        if files:
+            steps = []
+            for file in files:
+                new = re.search('.+fluid(.+)\.0\.dat', file)
+                steps.append(int(new.group(1)))
 
-            # steps.sort()
-            # start_step = max(steps)
+            steps.sort()
+            start_step = max(steps)
+        else:
+            start_step = 0
 
-        # print("Starting simulation at step " + str(start_step))
-        # integrator.step = start_step
+        print("Starting simulation at step " + str(start_step))
+        integrator.step = start_step
     return lb
 
 

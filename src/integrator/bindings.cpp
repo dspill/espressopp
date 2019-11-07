@@ -62,6 +62,7 @@
 #include "VelocityVerletOnRadius.hpp"
 #include "AssociationReaction.hpp"
 #include "MinimizeEnergy.hpp"
+#include "VolumeScaler.hpp"
 
 #include "EmptyExtension.hpp"
 
@@ -107,6 +108,7 @@ namespace espressopp {
       VelocityVerletOnRadius::registerPython();
       AssociationReaction::registerPython();
       MinimizeEnergy::registerPython();
+      VolumeScaler::registerPython();
       EmptyExtension::registerPython();
     }
   }
