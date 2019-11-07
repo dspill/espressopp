@@ -43,6 +43,7 @@
 #include "GeneralizedLangevinThermostat.hpp"
 #include "LangevinThermostatOnGroup.hpp"
 #include "LangevinThermostatOnRadius.hpp"
+#include "LangevinThermostatNoCm.hpp"
 #include "DPDThermostat.hpp"
 #include "LangevinBarostat.hpp"
 #include "FixPositions.hpp"
@@ -89,6 +90,7 @@ namespace espressopp {
       GeneralizedLangevinThermostat::registerPython();
       LangevinThermostatOnGroup::registerPython();
       LangevinThermostatOnRadius::registerPython();
+      LangevinThermostatNoCm::registerPython();
       DPDThermostat::registerPython();
       FixPositions::registerPython();
       LatticeBoltzmann::registerPython();

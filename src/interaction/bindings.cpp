@@ -82,6 +82,7 @@
 #include "ConstrainCOM.hpp"
 #include "ConstrainRG.hpp"
 #include "SmoothSquareWell.hpp"
+#include "ZConfinement.hpp"
 
 namespace espressopp {
   namespace interaction {
@@ -148,6 +149,7 @@ namespace espressopp {
       ConstrainCOM::registerPython();
       ConstrainRG::registerPython();
       SmoothSquareWell::registerPython();
+      ZConfinement::registerPython();
     }
   }
 }
